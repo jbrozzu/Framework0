@@ -1,7 +1,12 @@
-<% provide(:title, "Home") %>
-<h1>Framework 0</h1>
-<p>
-	Ceci est la page d'accueil pour le projet
-	<a href="https://github.com/jbrozzu/Framework0/tree/master/framework0">Framework 0</a>, 
-	de l'École 42.
-</p>
+<div class="center jumbotron">
+	<h1>Bienvenue sur Framework 0</h1>
+	<h2>
+		Ceci est la page d'accueil pour le projet
+		<a href="https://github.com/jbrozzu/Framework0/tree/master/framework0">Framework 0</a>
+		de l'École 42.
+	</h2>
+	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "42 logo"),
+            'http://rubyonrails.org/' %>
