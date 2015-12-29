@@ -5,8 +5,11 @@
 		<a href="https://github.com/jbrozzu/Framework0/tree/master/framework0">Framework 0</a>
 		de l'École 42.
 	</h2>
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<% if !logged_in? %>
+		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<% end %>
+
 </div>
 
-<%= link_to image_tag("rails.png", alt: "42 logo", class: "img42"),
-            'http://www.42.fr/' %>
+	<%= link_to image_tag("rails.png", alt: "42 logo", class: "img42"),
+           		 'http://www.42.fr/' %>
