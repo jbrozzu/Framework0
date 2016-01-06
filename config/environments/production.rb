@@ -77,6 +77,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_mailer.asset_host = 'https://framework0.local.42.fr:8443'
+
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
