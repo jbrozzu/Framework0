@@ -128,3 +128,1887 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2016-01-05 12:19:13 +0100
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-01-05 19:27:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (6466.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 6646ms (Views: 6636.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:27:58 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 48.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/custom.self-d375b761b1ef5590a2b73d817d31bcf62739daa0f7185a267b8061abfcc6ea2f.css?body=1" for ::1 at 2016-01-05 19:27:58 +0100
+
+
+Started GET "/login" for ::1 at 2016-01-05 19:28:01 +0100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (329.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 385ms (Views: 383.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for ::1 at 2016-01-05 19:28:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yqsErFtGQq318Hh2D5BeHC6bZ62oNxt0gs60Hx2VtNetn6Pt8r5tYBojAisT3abywcXJB7lljLxLjfqrTrNCTA==", "session"=>{"email"=>"jbrozzu@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "jbrozzu@hotmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 51.3ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('jbrozzu@hotmail.com') LIMIT 1[0m
+  [1m[35mSQL (6.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Jeremie Brozzu"], ["email", "jbrozzu@hotmail.com"], ["password_digest", "$2a$10$SyeE8fKpb0WLryAmVYi25eshVcuX8S6OkIkNKDaY821xloQOl0lye"], ["admin", "t"], ["created_at", "2016-01-05 18:28:24.786781"], ["updated_at", "2016-01-05 18:28:24.786781"]]
+  [1m[36m (73.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Bill Cosby"], ["email", "example@railstutorial.org"], ["password_digest", "$2a$10$H57x2E0Ol/o3ghwHK1jp9OJDTLJSH7wngeGZ0uj.en5nP2P3mTsWa"], ["created_at", "2016-01-05 18:28:24.933246"], ["updated_at", "2016-01-05 18:28:24.933246"]]
+  [1m[36m (341.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-1@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mrs. Gennaro Herman"], ["email", "example-1@railstutorial.org"], ["password_digest", "$2a$10$ekvCX7u2B3Eyigca0o5myeRz51A540er3cLOCXFQs05YvOTau9qMm"], ["created_at", "2016-01-05 18:28:25.631027"], ["updated_at", "2016-01-05 18:28:25.631027"]]
+  [1m[36m (41.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Therese Daniel PhD"], ["email", "example-2@railstutorial.org"], ["password_digest", "$2a$10$gL70/wy4Esq6vCqPDHrLluJyQNMKnB8aV95M.LRY5sKer2KMv3RT6"], ["created_at", "2016-01-05 18:28:25.734737"], ["updated_at", "2016-01-05 18:28:25.734737"]]
+  [1m[36m (33.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-3@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Herminia Schmeler Jr."], ["email", "example-3@railstutorial.org"], ["password_digest", "$2a$10$ADCFPEYgYLGTu.Aw1JExaOxwg4Ak1/43W2q6q8d7uM8/.ow9Oir9y"], ["created_at", "2016-01-05 18:28:25.830928"], ["updated_at", "2016-01-05 18:28:25.830928"]]
+  [1m[36m (57.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-4@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Oren Schaefer"], ["email", "example-4@railstutorial.org"], ["password_digest", "$2a$10$mVlMFJLukKEp.SYs62Q0k.MViMNEssdUDfFXHMHd4Le1dJJaeSr5G"], ["created_at", "2016-01-05 18:28:25.950377"], ["updated_at", "2016-01-05 18:28:25.950377"]]
+  [1m[36m (38.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-5@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Miss Taya Jaskolski"], ["email", "example-5@railstutorial.org"], ["password_digest", "$2a$10$fstPLxrPBSa4lgl5Cz237ecja6uSjU2sCjPq3rj0pebvGULrttM1e"], ["created_at", "2016-01-05 18:28:26.050813"], ["updated_at", "2016-01-05 18:28:26.050813"]]
+  [1m[36m (65.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-6@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Arielle Nienow"], ["email", "example-6@railstutorial.org"], ["password_digest", "$2a$10$pE4SaQRwRKfeLMs1yKsEHu13PpqvnRRN0IUTSWMWd8seqyVRHUtpi"], ["created_at", "2016-01-05 18:28:26.178483"], ["updated_at", "2016-01-05 18:28:26.178483"]]
+  [1m[36m (46.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-7@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Larissa Schuppe"], ["email", "example-7@railstutorial.org"], ["password_digest", "$2a$10$AcKxnzUJBEogBKEr.N8H1O9vB5LxEm0mEi1kJIrFH2niQQKTWdJcm"], ["created_at", "2016-01-05 18:28:26.287218"], ["updated_at", "2016-01-05 18:28:26.287218"]]
+  [1m[36m (46.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-8@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Roselyn Emmerich"], ["email", "example-8@railstutorial.org"], ["password_digest", "$2a$10$rSOVpQz3477shvm10UZz1OLWUqC38Z9Ncf0I/r8CJmPDOWQgL30ZK"], ["created_at", "2016-01-05 18:28:26.396090"], ["updated_at", "2016-01-05 18:28:26.396090"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-9@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Estella Wilkinson"], ["email", "example-9@railstutorial.org"], ["password_digest", "$2a$10$srRAib0R2YcDrYhm6VsPi.5nyfbZJtUMT8hn.03LYaxVbDw0nTCWq"], ["created_at", "2016-01-05 18:28:26.471354"], ["updated_at", "2016-01-05 18:28:26.471354"]]
+  [1m[36m (39.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-10@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ms. Ahmad Ernser"], ["email", "example-10@railstutorial.org"], ["password_digest", "$2a$10$.611Cceqe1cojqo3Ow/7M.FrntRXeQB1Of2nSn3987Ts6qe3G8eD6"], ["created_at", "2016-01-05 18:28:26.574193"], ["updated_at", "2016-01-05 18:28:26.574193"]]
+  [1m[36m (44.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-11@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Weston Harber"], ["email", "example-11@railstutorial.org"], ["password_digest", "$2a$10$5QLRALymAHQZcT9FiC2AdOJTVY6ZIasDQLAbvzOSrzQ/9Wi4PQ5yW"], ["created_at", "2016-01-05 18:28:26.682039"], ["updated_at", "2016-01-05 18:28:26.682039"]]
+  [1m[36m (45.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-12@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Marcel Watsica Sr."], ["email", "example-12@railstutorial.org"], ["password_digest", "$2a$10$tnN20hCwqks3b1eSWksXXOZl5waurNSmgqlon1PcXJVEtlt1Src1m"], ["created_at", "2016-01-05 18:28:26.790769"], ["updated_at", "2016-01-05 18:28:26.790769"]]
+  [1m[36m (51.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-13@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Darien Gerhold"], ["email", "example-13@railstutorial.org"], ["password_digest", "$2a$10$IUDG32lbxir906aqxZ7sQeYBeAbTAWyr/0j4JDfpJh3OeiiEIlnX2"], ["created_at", "2016-01-05 18:28:26.905411"], ["updated_at", "2016-01-05 18:28:26.905411"]]
+  [1m[36m (38.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-14@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ole Quigley"], ["email", "example-14@railstutorial.org"], ["password_digest", "$2a$10$7nudj7wNy6xQtq//IeV.5ecPeSLkX.R1lyNq8PwHg/qvUzPzg/i.2"], ["created_at", "2016-01-05 18:28:27.006013"], ["updated_at", "2016-01-05 18:28:27.006013"]]
+  [1m[36m (25.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-15@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Andrew Sawayn"], ["email", "example-15@railstutorial.org"], ["password_digest", "$2a$10$ZZARJjKnUik9wwOva0uGYOdhxuBvJaeuzYbVRm0.Hzaq2VmzHk7gy"], ["created_at", "2016-01-05 18:28:27.093548"], ["updated_at", "2016-01-05 18:28:27.093548"]]
+  [1m[36m (49.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-16@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ms. Rosario Huel"], ["email", "example-16@railstutorial.org"], ["password_digest", "$2a$10$7623B3PZRNeXHhiO6nq70.2V5i.5QBb5FoKTqgODhr.ncRDaztCYG"], ["created_at", "2016-01-05 18:28:27.205245"], ["updated_at", "2016-01-05 18:28:27.205245"]]
+  [1m[36m (59.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-17@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Dr. Yadira Hills"], ["email", "example-17@railstutorial.org"], ["password_digest", "$2a$10$rwYuHc4x1R6uZ2QB2uBeF.k8cXWYkxAgI1DQD3HEQHVVMPrz6W6wS"], ["created_at", "2016-01-05 18:28:27.327873"], ["updated_at", "2016-01-05 18:28:27.327873"]]
+  [1m[36m (37.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-18@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Doyle Wilderman"], ["email", "example-18@railstutorial.org"], ["password_digest", "$2a$10$IFBP6Z1m3R56iWfZO.P.Te931LzQcL8PpTU3TRcQZtisOV7ik4Bv."], ["created_at", "2016-01-05 18:28:27.426690"], ["updated_at", "2016-01-05 18:28:27.426690"]]
+  [1m[36m (50.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-19@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ms. Miracle King"], ["email", "example-19@railstutorial.org"], ["password_digest", "$2a$10$dEkoDz3957j4boiRx8X1t.JNs2rN.4ewxYmsjgw6Xk2lurPs/vzBW"], ["created_at", "2016-01-05 18:28:27.540008"], ["updated_at", "2016-01-05 18:28:27.540008"]]
+  [1m[36m (48.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-20@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Julian Dach"], ["email", "example-20@railstutorial.org"], ["password_digest", "$2a$10$tM1fckRCm/WW8FB/Cyf0HOOQV8UkFwkY/Z48AfegqUQgMx8wa00N."], ["created_at", "2016-01-05 18:28:27.650696"], ["updated_at", "2016-01-05 18:28:27.650696"]]
+  [1m[36m (37.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-21@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Walton Dietrich"], ["email", "example-21@railstutorial.org"], ["password_digest", "$2a$10$.JqwmTejgZaq0LYPWP/jrelF5Mn4VHFnc5mBAT8CBdsRMYxusCMze"], ["created_at", "2016-01-05 18:28:27.750107"], ["updated_at", "2016-01-05 18:28:27.750107"]]
+  [1m[36m (48.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-22@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mrs. Concepcion Kohler"], ["email", "example-22@railstutorial.org"], ["password_digest", "$2a$10$xPAiSL5Nu0GL3b6TTZkqjuhcZya7uzxQNU9XH.DiN6fsXKTAVuY0m"], ["created_at", "2016-01-05 18:28:27.860337"], ["updated_at", "2016-01-05 18:28:27.860337"]]
+  [1m[36m (55.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-23@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Jessyca Gutmann"], ["email", "example-23@railstutorial.org"], ["password_digest", "$2a$10$90J5DcCrlgpKKmub.QDIrOjkjOYq9tR5Ep49fzRKIHjlOMOt7AJ8O"], ["created_at", "2016-01-05 18:28:27.978478"], ["updated_at", "2016-01-05 18:28:27.978478"]]
+  [1m[36m (23.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-24@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Quinten Harvey PhD"], ["email", "example-24@railstutorial.org"], ["password_digest", "$2a$10$EMEwEr6wdFgq0l2eQDOWxeuWEBg2yV.7ryoItOvTkmgB1y3cUlQx2"], ["created_at", "2016-01-05 18:28:28.065121"], ["updated_at", "2016-01-05 18:28:28.065121"]]
+  [1m[36m (23.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-25@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Hans West"], ["email", "example-25@railstutorial.org"], ["password_digest", "$2a$10$VYBoj0IdVZZofFYs09g37uQKRz/Q3gXWexrLYHYlrfKWzhEZGIIaS"], ["created_at", "2016-01-05 18:28:28.150960"], ["updated_at", "2016-01-05 18:28:28.150960"]]
+  [1m[36m (26.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-26@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Laney Senger"], ["email", "example-26@railstutorial.org"], ["password_digest", "$2a$10$/HOMMpyq3YbLRNLzjax8ceen0mDb6hajLQSipA2.D8RHwmdrJiryu"], ["created_at", "2016-01-05 18:28:28.240064"], ["updated_at", "2016-01-05 18:28:28.240064"]]
+  [1m[36m (19.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-27@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Janae MacGyver"], ["email", "example-27@railstutorial.org"], ["password_digest", "$2a$10$YFQzziT6t1KXLLWyMwSV4e2sFRyhEBMAphHw.x.HdjmUvmAMxL8Pq"], ["created_at", "2016-01-05 18:28:28.321609"], ["updated_at", "2016-01-05 18:28:28.321609"]]
+  [1m[36m (34.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-28@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Viva Schaefer"], ["email", "example-28@railstutorial.org"], ["password_digest", "$2a$10$M7g4sRAkulp.E6WtHF/aauy5ha7uB7n4IuJB.5xpeUC6WFyd5v6.C"], ["created_at", "2016-01-05 18:28:28.418059"], ["updated_at", "2016-01-05 18:28:28.418059"]]
+  [1m[36m (38.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-29@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Luis Heaney"], ["email", "example-29@railstutorial.org"], ["password_digest", "$2a$10$MoTuDGmr3LGpZYwEufFfPuTpCg7O.nLo6X5kWeC11Wm3f7RZ92u6e"], ["created_at", "2016-01-05 18:28:28.518213"], ["updated_at", "2016-01-05 18:28:28.518213"]]
+  [1m[36m (45.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-30@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mrs. Buck Huel"], ["email", "example-30@railstutorial.org"], ["password_digest", "$2a$10$Qd2Waqyh0aucwLNjGjTBW.u9tEpmf5sDr/Zob40hzVCe//GfkqIz6"], ["created_at", "2016-01-05 18:28:28.626721"], ["updated_at", "2016-01-05 18:28:28.626721"]]
+  [1m[36m (35.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-31@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Sincere Bergnaum"], ["email", "example-31@railstutorial.org"], ["password_digest", "$2a$10$J/pHSMoTRVnGBiukDzsnjunkHRwjmBbCXulwjcH9pp6PICk1PEOYa"], ["created_at", "2016-01-05 18:28:28.724518"], ["updated_at", "2016-01-05 18:28:28.724518"]]
+  [1m[36m (61.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-32@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Dannie Rempel"], ["email", "example-32@railstutorial.org"], ["password_digest", "$2a$10$b3nxvFMCOglpgVVKhCyLeeoQRNr6tSxCgAts5/bNEHZStjfNp10ae"], ["created_at", "2016-01-05 18:28:28.848146"], ["updated_at", "2016-01-05 18:28:28.848146"]]
+  [1m[36m (51.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-33@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mr. Elton Rice"], ["email", "example-33@railstutorial.org"], ["password_digest", "$2a$10$tEvkRGEkJs4x6sjNbeP3..HlyA7wO3XKG3g666tykCkLDJd5wTr3i"], ["created_at", "2016-01-05 18:28:28.961689"], ["updated_at", "2016-01-05 18:28:28.961689"]]
+  [1m[36m (59.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-34@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mrs. Robbie Moen"], ["email", "example-34@railstutorial.org"], ["password_digest", "$2a$10$SzSrf4S7PtI0vFzClm1YD.GjDea1UFC3yBw7djuNzuVNr49TztSmi"], ["created_at", "2016-01-05 18:28:29.084446"], ["updated_at", "2016-01-05 18:28:29.084446"]]
+  [1m[36m (58.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-35@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Santiago Skiles III"], ["email", "example-35@railstutorial.org"], ["password_digest", "$2a$10$HsRlandhcxBeeMyok.J5K.vuMcrL.thWUdptg36/Io3SiRu7vcR9C"], ["created_at", "2016-01-05 18:28:29.206023"], ["updated_at", "2016-01-05 18:28:29.206023"]]
+  [1m[36m (42.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-36@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Margarette Mante"], ["email", "example-36@railstutorial.org"], ["password_digest", "$2a$10$aaDl.fsHtnIDq2qRnOzDsOIBK.oo3kzTVHSym6G2.MqirnTABzT4O"], ["created_at", "2016-01-05 18:28:29.310666"], ["updated_at", "2016-01-05 18:28:29.310666"]]
+  [1m[36m (37.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-37@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Lucienne Larson"], ["email", "example-37@railstutorial.org"], ["password_digest", "$2a$10$iOGEASq31QwlHh1/HEoqv.bgK7cF6333zwTKU6ZtGZq21nUsiKVBS"], ["created_at", "2016-01-05 18:28:29.410197"], ["updated_at", "2016-01-05 18:28:29.410197"]]
+  [1m[36m (31.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-38@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Delaney Rodriguez"], ["email", "example-38@railstutorial.org"], ["password_digest", "$2a$10$Q2cYqOapGHc/lx/8t/.A9.UdAPiEN6BPeZTUfn0tD2oHP3UA.HyKW"], ["created_at", "2016-01-05 18:28:29.505032"], ["updated_at", "2016-01-05 18:28:29.505032"]]
+  [1m[36m (54.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-39@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Deshawn Bayer"], ["email", "example-39@railstutorial.org"], ["password_digest", "$2a$10$E71q2iOZpfjj8DeGWPq/hucehWfDNY1mbJgxdl9RDO697suvi9unK"], ["created_at", "2016-01-05 18:28:29.621901"], ["updated_at", "2016-01-05 18:28:29.621901"]]
+  [1m[36m (21.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-40@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Eriberto Kulas"], ["email", "example-40@railstutorial.org"], ["password_digest", "$2a$10$G0lF5RKQtr4UQJFDYjf45u13shZIODQdnWC0gMGA.0wIRGwj4wjlm"], ["created_at", "2016-01-05 18:28:29.705539"], ["updated_at", "2016-01-05 18:28:29.705539"]]
+  [1m[36m (49.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-41@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Kelley Bogan IV"], ["email", "example-41@railstutorial.org"], ["password_digest", "$2a$10$SzvNdsZeRlmp9hD62yrTTeUR87UOzAjPkhTDLYKDCgLxBBmOzP0OS"], ["created_at", "2016-01-05 18:28:29.817083"], ["updated_at", "2016-01-05 18:28:29.817083"]]
+  [1m[36m (39.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-42@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Joel Larson I"], ["email", "example-42@railstutorial.org"], ["password_digest", "$2a$10$aXtHlmPjr4v.MTuc3CX9WOSYSsDrR.l9I.NCf1HMa4YG9W78fhCJS"], ["created_at", "2016-01-05 18:28:29.919464"], ["updated_at", "2016-01-05 18:28:29.919464"]]
+  [1m[36m (67.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-43@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ms. Caitlyn Hickle"], ["email", "example-43@railstutorial.org"], ["password_digest", "$2a$10$qzjHFOqjNGd13Imd7jw/UuCunOf9T.QUeleh7moxzBYN21itPzUrO"], ["created_at", "2016-01-05 18:28:30.049186"], ["updated_at", "2016-01-05 18:28:30.049186"]]
+  [1m[36m (95.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-44@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Bo Murphy V"], ["email", "example-44@railstutorial.org"], ["password_digest", "$2a$10$dFHAderLl5vih5hcZ8v.VeWzTzBDB3huaABuRb4A3TEA/AU2mMA5q"], ["created_at", "2016-01-05 18:28:30.207399"], ["updated_at", "2016-01-05 18:28:30.207399"]]
+  [1m[36m (36.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-45@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Daren Thompson"], ["email", "example-45@railstutorial.org"], ["password_digest", "$2a$10$nYklKgu1wnl.qt81vkF16OpvVgVlNjZHxl..XIJ8atcwA5E8d.V1q"], ["created_at", "2016-01-05 18:28:30.306163"], ["updated_at", "2016-01-05 18:28:30.306163"]]
+  [1m[36m (48.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-46@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Mr. Selina Tillman"], ["email", "example-46@railstutorial.org"], ["password_digest", "$2a$10$HO/ja5cwLLzDja.k4BQnm.jkkUMyZ5wALlH6lWMLlXpbyjCgD4t1e"], ["created_at", "2016-01-05 18:28:30.417550"], ["updated_at", "2016-01-05 18:28:30.417550"]]
+  [1m[36m (67.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-47@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Veronica Eichmann"], ["email", "example-47@railstutorial.org"], ["password_digest", "$2a$10$XFcmbBavw.sWeRXv2y9Qcuni/UqqP0W2bTX66WXvXCQnFJdYbwaye"], ["created_at", "2016-01-05 18:28:30.548269"], ["updated_at", "2016-01-05 18:28:30.548269"]]
+  [1m[36m (45.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example-48@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Ben Bruen"], ["email", "example-48@railstutorial.org"], ["password_digest", "$2a$10$UHxdY0DyhLT5GtxPXLk8oug3BP4gQL3lGFt4kyGIdIXhAv0XDcoEq"], ["created_at", "2016-01-05 18:28:30.657478"], ["updated_at", "2016-01-05 18:28:30.657478"]]
+  [1m[36m (47.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2016-01-05 19:28:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (218.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 318ms (Views: 308.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:32:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (33.4ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.5ms)
+
+NameError (undefined local variable or method `send_path' for #<#<Class:0x007fbc5912a648>:0x007fbc59129c20>):
+  app/views/static_pages/home.html.erb:12:in `_app_views_static_pages_home_html_erb___1679975829196042507_70223428137160'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.2ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (89.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:33:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (27.1ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.5ms)
+
+NameError (undefined local variable or method `static_pages' for #<#<Class:0x007feea1a1a260>:0x007feea1a19838>):
+  app/views/static_pages/home.html.erb:12:in `_app_views_static_pages_home_html_erb__3313277685449760515_70331412741040'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (84.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:34:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (171.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 277ms (Views: 269.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-05 19:34:14 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"VtOiltPn25rMxirvRDgSaWH1dkhRUWqK5LtMTgmZ4Iwx5wXXeh/0VyMVULJYdeqHjqvY4kAD/UIt+AL6Wr8WFw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 258.8ms
+
+Sent mail to jbrozzu@hotmail.com (30205.8ms)
+Date: Tue, 05 Jan 2016 19:34:14 +0100
+From: from@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568c0ca6d8dcf_7b0b3ff49d34ec6c206f5@e1r9p6.42.fr.mail>
+Subject: La Newsletter!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568c0ca6d6dbb_7b0b3ff49d34ec6c2053c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568c0ca6d6dbb_7b0b3ff49d34ec6c2053c
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568c0ca6d6dbb_7b0b3ff49d34ec6c2053c
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568c0ca6d6dbb_7b0b3ff49d34ec6c2053c--
+
+Completed 500 Internal Server Error in 30477ms (ActiveRecord: 0.1ms)
+
+EOFError (end of file reached):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (85.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:39:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (249.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 383ms (Views: 374.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-05 19:39:21 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"myx8Zxgxf/gqUfLg/8RpDApipmowfQ7RaOy9oTfxE3H8GNsmsclQNcWCiL3jiZHi5TwIwCEvmRmhr/MVZNfl6g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.4ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.3ms)
+
+NewsLetters#newsletter: processed outbound mail in 204.7ms
+
+Sent mail to jbrozzu@hotmail.com (10.8ms)
+Date: Tue, 05 Jan 2016 19:39:21 +0100
+From: from@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568c0dd98587e_7be33fc47c9eeadc420eb@e1r9p6.42.fr.mail>
+Subject: La Newsletter!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568c0dd983a5c_7be33fc47c9eeadc419e7";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568c0dd983a5c_7be33fc47c9eeadc419e7
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568c0dd983a5c_7be33fc47c9eeadc419e7
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568c0dd983a5c_7be33fc47c9eeadc419e7--
+
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (84.8ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:39:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (170.8ms)
+  Rendered layouts/_shim.html.erb (2.1ms)
+  Rendered layouts/_header.html.erb (4.8ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 294ms (Views: 285.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 19:39:48 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 56ms (Views: 55.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-05 19:39:50 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"KQPrvxumPTVGhJhgVw7znoZjvXiadmIV+JUSXQuwEZdON0z+sl4S+KlX4j1LQwtwaT0T0osk9d0x1lzpWJbnDA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.3ms)
+
+NewsLetters#newsletter: processed outbound mail in 159.9ms
+
+Sent mail to jbrozzu@hotmail.com (7.7ms)
+Date: Tue, 05 Jan 2016 19:39:50 +0100
+From: from@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568c0df68fa87_7c263fd05724aba0941a0@e1r9p6.42.fr.mail>
+Subject: La Newsletter!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568c0df68e49d_7c263fd05724aba094096";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568c0df68e49d_7c263fd05724aba094096
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568c0df68e49d_7c263fd05724aba094096
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568c0df68e49d_7c263fd05724aba094096--
+
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:47:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (235.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 354ms (Views: 346.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-01-06 11:47:29 +0100
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (360.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 408ms (Views: 407.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-01-06 11:47:38 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k67jLsyOqZ9EqC4KTtdFzHuy46Tj1Df3HMBXD33wEpLDkgS8zwLdxCTOq71RhXxZVWInran6lobVkctIFRQMBw==", "session"=>{"email"=>"jbrozzu@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "jbrozzu@hotmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 132ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/1" for ::1 at 2016-01-06 11:47:38 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:47:40 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 47.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 11:47:43 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"Gr0HkaE2fy0JgwOg4/TSq5jW5os7SgSNknfCliboMtxKgeADoroLdmnlhhf8pus+tgYignFkpfxbJl7RTgwsSQ=="}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/mailers/news_letters.rb:10: syntax error, unexpected tLABEL
+    mail (to: @user.email, subject: 'La Newsletter!')
+             ^
+/nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/mailers/news_letters.rb:10: syntax error, unexpected tLABEL, expecting '='
+    mail (to: @user.email, subject: 'La Newsletter!')
+                                   ^
+/nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/mailers/news_letters.rb:10: syntax error, unexpected ')', expecting keyword_end):
+  app/mailers/news_letters.rb:10: syntax error, unexpected tLABEL
+  app/mailers/news_letters.rb:10: syntax error, unexpected tLABEL, expecting '='
+  app/mailers/news_letters.rb:10: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.2ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (80.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:48:29 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (181.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 273ms (Views: 264.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 11:48:31 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"uB2dQxzrDMXi4tZMNUyppnlLpPGki+24TbgirBUgvc7oIXrRH2d4noKEU/sqHpAzV5tg+O6lTMmE6b7rfcSjWw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 481.7ms
+
+Sent mail to jbrozzu@hotmail.com (10.3ms)
+Date: Wed, 06 Jan 2016 11:48:32 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568cf1004b04f_f1da3fde216aeb2476698@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568cf1004936e_f1da3fde216aeb24765ae";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568cf1004936e_f1da3fde216aeb24765ae
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568cf1004936e_f1da3fde216aeb24765ae
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568cf1004936e_f1da3fde216aeb24765ae--
+
+Completed 500 Internal Server Error in 506ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (81.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:48:47 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 11:50:01 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"TW5af9ZhYxxTlWhpOs5lH+EXXE3hemfZP2XyXemBpmgdUr3t1e0XRzPz7d4lnFyKz8eYRKtUxqj2NG4agWW4/Q=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.0ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.0ms)
+
+NewsLetters#newsletter: processed outbound mail in 17.3ms
+
+Sent mail to jbrozzu@hotmail.com (4.0ms)
+Date: Wed, 06 Jan 2016 11:50:01 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568cf1599a262_f1da3fde25613b487688e@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568cf1599966c_f1da3fde25613b487670";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568cf1599966c_f1da3fde25613b487670
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568cf1599966c_f1da3fde25613b487670
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568cf1599966c_f1da3fde25613b487670--
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.6ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:50:24 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (103.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 178ms (Views: 177.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 11:54:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (179.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 259ms (Views: 250.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 11:54:23 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"Qlgu5lJPeN2yHh6MV8l32cwyqqa6+PLwhEXcTjHYSPISZMl0UcMMhtJ4mztIm05M4uJur/DWU4FNFEAJWTxWZw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 455.1ms
+
+Sent mail to jbrozzu@hotmail.com (7.8ms)
+Date: Wed, 06 Jan 2016 11:54:24 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568cf2603a4e4_f2ec3fe5b1f7732c747a3@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568cf26038e20_f2ec3fe5b1f7732c746c2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568cf26038e20_f2ec3fe5b1f7732c746c2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568cf26038e20_f2ec3fe5b1f7732c746c2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568cf26038e20_f2ec3fe5b1f7732c746c2--
+
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.1ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (89.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2016-01-06 11:59:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (181.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 260ms (Views: 251.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 11:59:27 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"qlLYFWHuNg9rypS/A9ia3sWHV5klnOa5/1pTtIRnAmn6bj+HYmJCVAusEQgciqNL61eTkG+yR8g2C8/z7IMc/A=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 455.0ms
+
+Sent mail to jbrozzu@hotmail.com (7.6ms)
+Date: Wed, 06 Jan 2016 11:59:27 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568cf38f98f22_f4673ff162c3edec1065c@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568cf38f97960_f4673ff162c3edec10560";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568cf38f97960_f4673ff162c3edec10560
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568cf38f97960_f4673ff162c3edec10560
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568cf38f97960_f4673ff162c3edec10560--
+
+Completed 500 Internal Server Error in 475ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (73.8ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 12:01:24 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (165.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 257ms (Views: 249.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 12:01:26 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"yRttPGcfMoQB6gj9U/0Gwo8XREsCRcB9TPuE2nNlbE2ZJ4quZJNG32GMjUpMrz9XoceAQkhrYQyFqhidG4Fy2A=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 441.4ms
+
+Sent mail to jbrozzu@hotmail.com (16.6ms)
+Date: Wed, 06 Jan 2016 12:01:26 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568cf40692dbe_f4e83feaae909768906fc@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568cf4069182c_f4e83feaae909768905b3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568cf4069182c_f4e83feaae909768905b3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568cf4069182c_f4e83feaae909768905b3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568cf4069182c_f4e83feaae909768905b3--
+
+Completed 500 Internal Server Error in 470ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.5ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (74.7ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 13:44:45 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (293.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 420ms (Views: 408.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 13:44:51 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"/IttjmcHCqgGcCGjMk8Vj4zE8vDotRvWDqflsdJ8AeGst4ocZIt+82YWpBQtHSwaohQ2+aKbuqfH9nn2upgfdA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 743.3ms
+
+Sent mail to jbrozzu@hotmail.com (10.5ms)
+Date: Wed, 06 Jan 2016 13:44:51 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d0c43f2d53_1a8d3fd9463277ec6730@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d0c43f0ebc_1a8d3fd9463277ec67225";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d0c43f0ebc_1a8d3fd9463277ec67225
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d0c43f0ebc_1a8d3fd9463277ec67225
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d0c43f0ebc_1a8d3fd9463277ec67225--
+
+Completed 500 Internal Server Error in 788ms (ActiveRecord: 0.1ms)
+
+Errno::ECONNREFUSED (Connection refused - connect(2) for "localhost" port 25):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (85.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 13:59:06 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (180.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 262ms (Views: 253.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 13:59:08 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"lSeA9wRwXLnXbPHm8WC1SYpJeekJTaEo6OVtn8062inFG2dlB/wo4rcKdFHuMozcpJm94ENjAFkhtPHYpd7EvA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 452.7ms
+
+Sent mail to jbrozzu@hotmail.com (692.6ms)
+Date: Wed, 06 Jan 2016 13:59:09 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d0f9dbf9a_1e953fc0dfb6eccc726a2@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d0f9da9c6_1e953fc0dfb6eccc72535";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d0f9da9c6_1e953fc0dfb6eccc72535
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d0f9da9c6_1e953fc0dfb6eccc72535
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d0f9da9c6_1e953fc0dfb6eccc72535--
+
+Completed 500 Internal Server Error in 1157ms (ActiveRecord: 0.1ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbukK
+):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (4.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (75.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:04:05 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 39.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:04:24 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:04:27 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"DsVCrqjtH/vq70H2tfnrhS4kHNn5n75CB27yhHbvRhhe+aU8q2FroIqJxEGqq9IQAPTY0LOxHzPOP27DHgtYjQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.0ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.0ms)
+
+NewsLetters#newsletter: processed outbound mail in 17.0ms
+
+Sent mail to jbrozzu@hotmail.com (687.0ms)
+Date: Wed, 06 Jan 2016 14:04:27 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d10dbc4a04_1e953fc0e321526c7282d@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d10dbc3e68_1e953fc0e321526c72720";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d10dbc3e68_1e953fc0e321526c72720
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d10dbc3e68_1e953fc0e321526c72720
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d10dbc3e68_1e953fc0e321526c72720--
+
+Completed 500 Internal Server Error in 706ms (ActiveRecord: 0.1ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbvLd
+):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (5.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.4ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:06:29 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:06:30 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"KAvJxkaSLLmJJJwiWgQeS+Y22x4ZX8rpkBGUD2GwsQ14Ny5URR5Y4ulCGZVFVifeyOYfF1Nxa5hZQAhICVSvmA=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.0ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.0ms)
+
+NewsLetters#newsletter: processed outbound mail in 17.2ms
+
+Sent mail to jbrozzu@hotmail.com (296.5ms)
+Date: Wed, 06 Jan 2016 14:06:30 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d1156c2963_1e953fc0e2a5afa47306d@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d1156c1d61_1e953fc0e2a5afa4729f2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d1156c1d61_1e953fc0e2a5afa4729f2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d1156c1d61_1e953fc0e2a5afa4729f2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d1156c1d61_1e953fc0e2a5afa4729f2--
+
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 0.1ms)
+
+Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/ContinueSignIn?sarp=1&scc=1&plt=AKgnsbulL
+):
+  app/controllers/users_controller.rb:54:in `send_newsletter'
+
+
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (6.3ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /nfs/zfs-student-2/users/jbrozzu/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (72.4ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:08:33 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (165.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 260ms (Views: 251.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:08:35 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"wTnyaD14np4KbtlXFkgST32QJi0+15fR1wdRdZNMMs+RBRX6PvTqxWoIXOAJGivaU0DiJHT5NqAeVs0y+6gsWg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 451.9ms
+
+Sent mail to jbrozzu@hotmail.com (1346.0ms)
+Date: Wed, 06 Jan 2016 14:08:35 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d11d3e9901_202b3fbfd59f4e60339c9@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d11d3e8350_202b3fbfd59f4e603387";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d11d3e8350_202b3fbfd59f4e603387
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d11d3e8350_202b3fbfd59f4e603387
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d11d3e8350_202b3fbfd59f4e603387--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1810ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:08:37 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users" for ::1 at 2016-01-06 14:11:27 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY name LIMIT 15 OFFSET 0[0m
+  Rendered users/_user.html.erb (3.7ms)
+  Rendered users/index.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:11:29 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:11:30 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"UVAbq3mlJsU1CYHZncqOiBWPSn6LQmPZv+b7eqSf8XsBbPw5eilSnlVvBG6CmLcdO1+Od8Fswqh2t2c9zHvv7g=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.0ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.0ms)
+
+NewsLetters#newsletter: processed outbound mail in 17.6ms
+
+Sent mail to jbrozzu@hotmail.com (1332.0ms)
+Date: Wed, 06 Jan 2016 14:11:30 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d12825fffc_202b3fbfd9bde9843413a@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d12825f39f_202b3fbfd9bde98434098";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d12825f39f_202b3fbfd9bde98434098
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d12825f39f_202b3fbfd9bde98434098
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d12825f39f_202b3fbfd9bde98434098--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1352ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:11:31 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:13:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (165.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 258ms (Views: 250.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:13:46 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"jIYzQjXkkREOmSRYNURM051D0jIaAkbKAnwAHh+oGaDcutTQNmjlSm7/oe8qFnVGs5MWO1As57vLLZxZd0wHNQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.3ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.2ms)
+
+NewsLetters#newsletter: processed outbound mail in 454.5ms
+
+Sent mail to jbrozzu@hotmail.com (904.0ms)
+Date: Wed, 06 Jan 2016 14:13:46 +0100
+From: no-reply@example.com
+To: jbrozzu@hotmail.com
+Message-ID: <568d130a8656c_21173ff675524620604f6@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d130a84fda_21173ff67552462060381";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d130a84fda_21173ff67552462060381
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d130a84fda_21173ff67552462060381
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d130a84fda_21173ff67552462060381--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1371ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:13:47 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 40.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for ::1 at 2016-01-06 14:15:35 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"26BBnD9KUElbLnVHznUYAHMYTt2BH47/VHvW3t0RRaOLnKYOPMYkEjtI8PDRJyGVXciK1MsxL46dKkqZtfVbNg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:15:35 +0100
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-01-06 14:15:38 +0100
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (21.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-01-06 14:15:59 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pQBE8JIB2hFO1o7oUQuNY/oWTMsO3TKdaxdSCWT9qsj1PKNikY2uSi6wC19OWbT21MaIwkTzk+yiRs5ODBm0XQ==", "user"=>{"name"=>"Florent Lagoutte", "email"=>"flagoutt@student.42.fr", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('flagoutt@student.42.fr') LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Florent Lagoutte"], ["email", "flagoutt@student.42.fr"], ["password_digest", "$2a$10$ctov1wH74y62Qn4/x/wsCuHjeC4rGDYb/o2gUb9eEHjzoiCBCUtfW"], ["created_at", "2016-01-06 13:15:59.627904"], ["updated_at", "2016-01-06 13:15:59.627904"]]
+  [1m[36m (79.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/51
+Completed 302 Found in 158ms (ActiveRecord: 81.0ms)
+
+
+Started GET "/users/51" for ::1 at 2016-01-06 14:15:59 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:16:02 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered static_pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 46ms (Views: 46.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/static_pages/home" for ::1 at 2016-01-06 14:16:04 +0100
+Processing by UsersController#send_newsletter as HTML
+  Parameters: {"authenticity_token"=>"laiZ36hYi/I4zSrX/mO/+CbiWHOrh2tyd8WVsGxv26nFlH5Nq9T/qVirr2DhMYZtCDKceuGpygO+lAn3BIvFPA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from send_newsletter at /nfs/zfs-student-2/users/jbrozzu/Ecole42/Framework0/app/controllers/users_controller.rb:54)
+  Rendered news_letters/newsletter.html.erb within layouts/mailer (0.0ms)
+  Rendered news_letters/newsletter.text.erb within layouts/mailer (0.0ms)
+
+NewsLetters#newsletter: processed outbound mail in 17.7ms
+
+Sent mail to flagoutt@student.42.fr (1116.7ms)
+Date: Wed, 06 Jan 2016 14:16:04 +0100
+From: no-reply@example.com
+To: flagoutt@student.42.fr
+Message-ID: <568d1394d1f56_21173ff67a3ed79860627@e2r11p23.42.fr.mail>
+Subject: Newsletter
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_568d1394d12af_21173ff67a3ed7986058d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_568d1394d12af_21173ff67a3ed7986058d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to framework0,
+===============================================
+ 
+This is our special newsletter with nothing special inside!
+ 
+Thanks for joining and have a great day!
+
+
+----==_mimepart_568d1394d12af_21173ff67a3ed7986058d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Framework0</h1>
+    <p>
+      This is our special newsletter with nothing special inside!
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_568d1394d12af_21173ff67a3ed7986058d--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1137ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:16:05 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered static_pages/home.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/51/edit" for ::1 at 2016-01-06 14:16:31 +0100
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"51"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "51"]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/edit.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/users/51" for ::1 at 2016-01-06 14:16:39 +0100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"D9WMujUvCJ3LE0uxagTfcsI863RBU4/t2Fb8BRd7ToZf6WsoNqN8xqt1zgZ1Vubn7OwvfQt9LpwRB2BCf59QEw==", "id"=>"51"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "51"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 51]]
+  [1m[36m (123.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 126ms (ActiveRecord: 123.8ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:16:39 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-06 14:23:59 +0100
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 51]]
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 51]]
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 57.7ms | ActiveRecord: 0.1ms)

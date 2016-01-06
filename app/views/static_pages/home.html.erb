@@ -8,6 +8,11 @@
 	<% if !logged_in? %>
 		<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 	<% end %>
+	<% if logged_in? %>
+		</br>
+		<%= link_to 'Recevoir la Newsletter', "static_pages/home", method: :post, class: "btn btn-lg btn-primary"%>
+		<h2>Dernière mise à jour : Lundi 4 Janvier 2016</h2>
+	<% end %>
 
 
 </div>

@@ -50,6 +50,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def send_newsletter
+    NewsLetters.newsletter(current_user).deliver
+    flash[:success] = "Newsletter has been sent"
+    redirect_to root_url
+  end
+
   private
 
     def user_params
